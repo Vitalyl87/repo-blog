@@ -1,0 +1,345 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.header {
+    border-bottom: 2px solid #CDCDCD;
+}
+.wrapper {
+    height: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header__logo {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.header__logo-link {
+    margin: 30px 20px 30px 0px;
+}
+@font-face {
+    font-family: Circe Rounded; /* Гарнитура шрифта */
+    src: url(../fonts/CirceRounded-AltBold.ttf); /* Путь к файлу со шрифтом */
+   }
+   @font-face {
+    font-family: Museo Cyrl; /* Гарнитура шрифта */
+    src: url(../fonts/Museo\ Cyrl\ 500.otf); /* Путь к файлу со шрифтом */
+   }
+.header__logo-text {
+    margin: 35px 0 24px 0;
+    font-family: Circe Rounded;
+    font-size: 22px;
+    line-height: 26px;
+    color: #010101;
+    display: table;
+    
+}
+.header__logo-text p {
+    display: table-cell;
+    vertical-align: bottom;
+}
+.header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header__nav-btn {
+    text-align: center;
+    vertical-align: bottom;
+    width: 166px;
+    height: 32px;
+    font-family: Circe Rounded;
+    font-size: 16px;
+    line-height: 19px;
+    background: #315AF2;
+    border-radius: 6px;
+    display: table;
+    margin: 24px 0;
+}
+.header__nav-btn a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+}
+
+.last {
+    height: 440px;
+    border-bottom: 2px solid #CDCDCD;
+}
+
+.last__wrapper {
+    display: flex;
+    padding-top:40px;
+    padding-bottom:5px;
+}
+
+.last__wrapper-text h3 {
+    font-family: Circe Rounded;
+    font-size: 16px;
+    line-height: 20px;
+    color: #E9399C;
+    margin-bottom: 10px;
+}
+.last__wrapper-text h1 {
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 128%;
+    color: #315AF2;
+    margin-bottom: 10px;
+}
+.last__wrapper-text p {
+    font-family: Circe Rounded;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 136%;
+    color: #000000;
+    margin-bottom: 20px;
+    max-width: 405px;
+}
+.last__wrapper-btn {
+    text-align: center;
+    vertical-align: bottom;
+    width: 150px;
+    height: 60px;
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    background: #315AF2;
+    border-radius: 6px;
+    display: table;
+}
+.last__wrapper-btn a {
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+}
+.others {
+    padding:60px;
+}
+.others h2 {
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: #315AF2;
+    margin-bottom: 32px;
+}
+.others__items-item {
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 335px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.others__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.others__items a {
+    text-decoration: none;
+}
+.date {
+    font-family: Circe Rounded;
+    font-size: 12px;
+    line-height: 20px;
+    color: #979797;
+    margin: 20px 0 0 20px;
+}
+.about {
+    text-align: center;
+}
+.title {
+    margin-top: 35px;
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 120%;
+    color: #315AF2;
+}
+.about img {
+    object-fit: cover;
+}
+.last__wrapper-pic img {
+    object-fit: cover;
+    max-height: 400px;
+}
+/*
+.wrapper__about{
+    background-color: #E5E5E5;
+     height: calc(100vh - 80px);
+}
+ */
+.wrapper__about__inner {
+    max-width: 607px;
+    margin: 0 auto;
+}
+.wrapper__about__inner-title {
+    margin: 60px 212px 20px 0;
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 128%;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+.add__article-h1 h1 {
+    margin: 60px 0 44px 0;
+    font-weight: bold;
+    font-family: Museo Cyrl;
+    font-size: 45px;
+    line-height: 52px;
+    letter-spacing: -0.416667px;
+    color: #315AF2;
+}
+
+.add__article__wrapper  {
+    display: flex;
+
+
+}
+.add__article-form {
+    width: 881px;
+}
+.add__article-el img {
+    object-fit: cover;
+}
+#id_title {
+    width: 875px;
+    height: 46px;
+    margin-bottom: 37px;
+    border: 2px solid #CDCDCD;
+    border-radius: 3px;
+    color: #315AF2;
+    padding-left: 10px;
+    font-weight: bold;
+    font-family: Museo Cyrl;
+    font-size: 20px;
+    line-height: 52px;
+    letter-spacing: -0.416667px;
+}
+#id_content{
+    width: 881px;
+    height: 478px;
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.add__article-el button {
+    border: 0;
+    margin-left: 21px;
+    width: 159px;
+    height: 50px;
+    background-color: #E9399C;
+    border-radius: 3px;
+}
+
+.add__article-el button span {
+    font-family: Museo Cyrl;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.img-upload {
+    margin: 41px 0 0 21px;
+    width: 298px;
+    height: 135px;
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.img-upload h1 {
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 31px;
+    color: #315AF2;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    width: 155px;
+    height: 50px;
+    display: inline-block;
+    background-color: #315AF2;
+    border-radius: 3px;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+
+}
+.upload-btn span {
+    position: absolute;
+    font-family: Museo Cyrl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    top: 12px;
+    left:55px;
+}

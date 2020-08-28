@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<link rel="stylesheet" type="text/css" href="../../static/css/style.css">-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block styles %}
+{% endblock %}
+</head>
+<body>
+    <div class="header">
+            <div class="wrapper">
+                <div class="header__wrapper">
+                        <div class="header__logo">
+                                <a href="/blog/" class="header__logo-link">
+                                    <!--<img src="../../static/img/Logo_Kodland.svg" alt="" class="header__logo-pic">-->
+                                    <img src="{% static 'img/Logo_Kodland.svg' %}" alt="" class="header__logo-pic">
+                                </a>
+                                <div class="header__logo-text">
+                                        <p>Блог</p>
+                                </div>
+                        </div>
+                        <nav class="header__nav">
+                            <div class="header__nav-btn">
+                                <a href="{% url 'add_article' %}">+ Добавить статью</a>
+                            </div>
+                        </nav>
+
+
+                </div>
+
+
+
+            </div>
+
+    </div>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

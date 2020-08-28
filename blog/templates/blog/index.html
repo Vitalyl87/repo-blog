@@ -1,0 +1,66 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load blog_extras %}
+
+{% block content %}
+    {% if object_list.count == 0 %}
+        <div class="wrapper">
+        <div class="last__wrapper-text">
+            <h1>Пока нет статей к прочтению... Начините вести данный блог первым! :)</h1>
+        </div>
+        </div>
+    {% else %}
+
+    <div class="last">
+            <div class="wrapper">
+                <div class="last__wrapper">
+                    <div class="last__wrapper-text">
+                        <h3>NEW</h3>
+                            <h1>{{ object_list.0.title|safe }}</h1>
+                        {%for p in object_list.0.content|split:"."|slice:":1"%}
+                            <p>{{ p|safe }}</p>
+                        {% endfor %}
+
+
+                        <div class="last__wrapper-btn">
+                                <a href="{{object_list.0.pk}}">Читать</a>
+                        </div>
+                    </div>
+                    <div class="last__wrapper-pic">
+                        <img src="{{ object_list.0.image.url }}" alt="">
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="others">
+            <div class="wrapper">
+                <h2>Другие статьи</h2>
+                <div class="others__items">
+
+                    {% for article in  object_list|slice:"1:" %}
+                        <a href="{{article.pk}}">
+                       <div class="others__items-item">
+                            <div class="date">{{ article.published_date }}</div>
+                            <div class="about">
+                                <img src="{{ article.image.url }}" alt="" width="220px" height="115px">
+                                <div class="title">
+                                    {{ article.title|safe }}
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    {% endfor %}
+
+
+
+                </div>
+
+
+
+            </div>
+    </div>
+    {% endif%}
+
+
+{% endblock %}

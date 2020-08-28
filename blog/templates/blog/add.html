@@ -1,0 +1,86 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="add__article-h1">
+        <h1>Добавить статью<h1>
+    </div>
+    <form action="." method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <div class="add__article__wrapper">
+        <div class="add__article-form">
+            {% for f in form.visible_fields|slice:":2" %}
+               {{ f }}
+            {% endfor %}
+
+        </div>
+        <div class="add__article-el">
+            <button type="submit"><span>Опубликовать</span></button>
+
+
+            <div class="img-upload" id="upload">
+                <h1>Загрузить изображение</h1>
+                <img id="image"/>
+                <div class="upload-btn" id="upload-btn">
+                    <label for="id_image" class="custom-file-upload">
+                        <span>Файл</span>
+                    </label>
+                    {% for f in form.visible_fields|slice:"2:" %}
+                           {{ f }}
+                        {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    </form>
+
+</div>
+
+
+
+
+
+
+
+<script>
+    document.getElementById("id_image").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image").src = e.target.result;
+        document.getElementById("image").style.width = '286px';
+        document.getElementById("image").style.height = '260px';
+        document.getElementById("image").style.height = '260px';
+        document.getElementById("image").style.border = '2px solid #E5E5E5';
+        document.getElementById("upload").style.height = '318px';
+        document.getElementById("upload").style.height = '318px';
+        document.getElementById("upload-btn").style.visibility='hidden';
+
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+</script>
+    <script src="https://cdn.tiny.cloud/1/c1lognb9rxs9nttcaxntccgxy7lnfpxdwc2bjnuv6a7imbmj/tinymce/5/tinymce.min.js" referrerpolicy="origin"/></script>
+  <script>
+          tinymce.init({
+    selector: 'textarea',
+    setup: function (editor) {
+        editor.on('change', function (e) {
+            editor.save();
+        });
+    }
+});
+
+    </script>
+
+{% endblock %}

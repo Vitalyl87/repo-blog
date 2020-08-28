@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% load blog_extras %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="wrapper__about">
+        <div class="wrapper__about__inner">
+            <div class="wrapper__about__inner-title">
+                    <h1>{{ object.title|safe }}</h1>
+            </div>
+            <div class="wrapper__about__inner-image">
+                <img src="{{ object.image.url }}" alt="">
+            </div>
+            <div class="wrapper__about__inner-sub">
+                {%for p in object.content|split:"."|slice:":1"%}
+                            <h3>{{ p|safe }}</h3>
+                {% endfor %}
+            </div>
+            <div class="wrapper__about__inner-content">
+
+{% autoescape off %}
+                {{ object.content|split:"."|slice:"1:"|join:"." }}
+                {% endautoescape %}
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
